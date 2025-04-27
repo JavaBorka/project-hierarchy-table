@@ -5,11 +5,9 @@ import { SecondChildData } from './SecondChildData';
 
 export const SecondChildTable = () => {
   return (
-    <div className="table__second-child-wrapper">
-      <div className="table__second-child">
-        <SecondChildHeader />
-        <SecondChildData />
-      </div>
+    <div className="table__second-child">
+      <SecondChildHeader />
+      <SecondChildData />
     </div>
   );
 };
