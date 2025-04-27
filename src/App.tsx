@@ -1,9 +1,14 @@
-import { StaticPage } from './static/StaticPage';
+import './App.css';
+import { FirstChildTable } from './components/FirstChildTable/FirstChildTable';
+import { ParentTable } from './components/ParentTable/ParentTable';
+import { SecondChildTable } from './components/SecondChildTable/SecondChildTable';
 
 export const App = () => {
   return (
-    <>
-      <StaticPage />
-    </>
+    <div className="table">
+      <ParentTable />
+      <FirstChildTable />
+      <SecondChildTable />
+    </div>
   );
 };

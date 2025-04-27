@@ -1,0 +1,53 @@
+.table__header {
+  background-color: #1de9b6;
+  font-weight: bold;
+  color: #111;
+}
+
+.table__cell {
+  padding: 8px;
+  text-align: center;
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+.table__toggle-btn,
+.table__remove-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.table__toggle-btn {
+  color: white;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.table__toggle-btn:hover {
+  border-radius: 4px;
+  transform: scale(1.2);
+}
+
+.table__remove-btn {
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.table__remove-btn:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.table__toggle-btn--active {
+  transform: rotate(90deg);
+}

@@ -1,0 +1,26 @@
+.table__second-child-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.table__second-child-wrapper--open {
+  max-height: 1000px;
+}
+
+.table__second-child {
+  margin-left: 140px;
+  max-width: 400px;
+}
+
+.table__second-child-header,
+.table__second-child-data {
+  display: grid;
+  grid-template-columns:
+    minmax(40px, 1fr)
+    minmax(80px, 2fr)
+    minmax(150px, 3fr)
+    minmax(80px, 1fr);
+  align-items: center;
+  gap: 8px;
+}
