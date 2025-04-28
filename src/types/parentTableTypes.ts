@@ -1,3 +1,5 @@
+import { FirstChildItem } from './firstChildTableTypes';
+
 export interface ParentItem {
   ID: string;
   Name: string;
@@ -9,8 +11,9 @@ export interface ParentItem {
   InSpaceSince: string;
   BeerConsumption: string;
   KnowsTheAnswer: string;
+  firstChildRecords: FirstChildItem[];
 }
 
 export interface ParentDataProps {
-  parent: ParentItem;
+  parentItem: ParentItem;
 }

@@ -9,8 +9,8 @@ export const ParentTable: React.FC = () => {
   return (
     <div className="table__parent">
       <ParentHeader />
-      {parentMockData.map(parent => (
-        <ParentData key={parent.ID} parent={parent} />
+      {parentMockData.map(parentItem => (
+        <ParentData key={parentItem.ID} parentItem={parentItem} />
       ))}
     </div>
   );

@@ -12,6 +12,20 @@ export const parentMockData: ParentItem[] = [
     InSpaceSince: 'Wed Dec 24 2014',
     BeerConsumption: '6704',
     KnowsTheAnswer: 'true',
+    firstChildRecords: [
+      {
+        ID: '1007',
+        CharacterID: '44',
+        IsAlive: 'true',
+        Years: '29',
+      },
+      {
+        ID: '1684',
+        CharacterID: '44',
+        IsAlive: 'true',
+        Years: '28',
+      },
+    ],
   },
   {
     ID: '48',
@@ -24,6 +38,7 @@ export const parentMockData: ParentItem[] = [
     InSpaceSince: 'Wed Dec 04 2014',
     BeerConsumption: '679420',
     KnowsTheAnswer: 'true',
+    firstChildRecords: [],
   },
   {
     ID: '52',
@@ -36,5 +51,6 @@ export const parentMockData: ParentItem[] = [
     InSpaceSince: 'Sun Dec 21 2014',
     BeerConsumption: '62544',
     KnowsTheAnswer: 'true',
+    firstChildRecords: [],
   },
 ];

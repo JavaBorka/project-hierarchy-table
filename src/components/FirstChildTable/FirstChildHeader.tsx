@@ -1,4 +1,6 @@
-export const FirstChildHeader = () => {
+import React from 'react';
+
+export const FirstChildHeader: React.FC = () => {
   return (
     <div className="table__first-child-header table__header">
       <div className="table__cell"></div>
