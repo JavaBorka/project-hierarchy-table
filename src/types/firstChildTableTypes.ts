@@ -1,8 +1,11 @@
+import { SecondChildItem } from './secondChildTableTypes';
+
 export interface FirstChildItem {
   ID: string;
   CharacterID: string;
   IsAlive: string;
   Years: string;
+  SecondChildRecords: SecondChildItem[];
 }
 
 export interface FirstChildTableProps {

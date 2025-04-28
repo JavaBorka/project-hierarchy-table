@@ -18,12 +18,25 @@ export const parentMockData: ParentItem[] = [
         CharacterID: '44',
         IsAlive: 'true',
         Years: '29',
+        SecondChildRecords: [
+          {
+            ID: '2008',
+            NemesisID: '1007',
+            SecretCode: '1799820570',
+          },
+          {
+            ID: '2009',
+            NemesisID: '1007',
+            SecretCode: '1799820571',
+          },
+        ],
       },
       {
         ID: '1684',
         CharacterID: '44',
         IsAlive: 'true',
         Years: '28',
+        SecondChildRecords: [],
       },
     ],
   },

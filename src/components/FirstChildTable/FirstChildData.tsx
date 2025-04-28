@@ -31,7 +31,11 @@ export const FirstChildData: React.FC<FirstChildDataProps> = ({
       <div
         className={`table__second-child-wrapper ${isFirstChildOpen ? 'table__second-child-wrapper--open' : ''} `}
       >
-        <SecondChildTable />
+        {firstChildItem.SecondChildRecords.length > 0 && (
+          <SecondChildTable
+            secondChildRecords={firstChildItem.SecondChildRecords}
+          />
+        )}
       </div>
     </>
   );
