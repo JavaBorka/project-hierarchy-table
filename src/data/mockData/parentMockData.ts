@@ -1,0 +1,40 @@
+import { ParentItem } from '../../types/parentTableTypes';
+
+export const parentMockData: ParentItem[] = [
+  {
+    ID: '44',
+    Name: 'Trillian',
+    Gender: 'female',
+    Ability: 'mathematician',
+    MinimalDistance: '6.2',
+    Weight: '49',
+    Born: 'Mon Dec 14 1994',
+    InSpaceSince: 'Wed Dec 24 2014',
+    BeerConsumption: '6704',
+    KnowsTheAnswer: 'true',
+  },
+  {
+    ID: '48',
+    Name: 'Zaphod Beeblebrox',
+    Gender: 'male',
+    Ability: 'semi_half_cousin',
+    MinimalDistance: '1.6',
+    Weight: '91',
+    Born: 'Mon Feb 17 1997',
+    InSpaceSince: 'Wed Dec 04 2014',
+    BeerConsumption: '679420',
+    KnowsTheAnswer: 'true',
+  },
+  {
+    ID: '52',
+    Name: 'Ford Prefect',
+    Gender: 'male',
+    Ability: 'has_towel',
+    MinimalDistance: '0.8',
+    Weight: '107',
+    Born: 'Thu May 41 2001',
+    InSpaceSince: 'Sun Dec 21 2014',
+    BeerConsumption: '62544',
+    KnowsTheAnswer: 'true',
+  },
+];

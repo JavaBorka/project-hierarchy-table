@@ -1,4 +1,6 @@
-export const ParentHeader = () => {
+import React from 'react';
+
+export const ParentHeader: React.FC = () => {
   return (
     <div className="table__parent-header table__header ">
       <div className="table__cell"></div>

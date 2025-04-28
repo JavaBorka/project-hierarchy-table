@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { FirstChildTable } from '../FirstChildTable/FirstChildTable';
+import { ParentDataProps } from '../../types/parentTableTypes';
+import React from 'react';
 
-export const ParentData = () => {
+export const ParentData: React.FC<ParentDataProps> = ({ parent }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -15,16 +17,16 @@ export const ParentData = () => {
             {isOpen ? '▼' : '▶'}
           </button>
         </div>
-        <div className="table__cell">44</div>
-        <div className="table__cell">Trillian</div>
-        <div className="table__cell">Female</div>
-        <div className="table__cell">Mathematician</div>
-        <div className="table__cell">6.2</div>
-        <div className="table__cell">49</div>
-        <div className="table__cell">Mon Dec 14 1994</div>
-        <div className="table__cell">Wed Dec 24 2014</div>
-        <div className="table__cell">6704</div>
-        <div className="table__cell">True</div>
+        <div className="table__cell">{parent.ID}</div>
+        <div className="table__cell">{parent.Name}</div>
+        <div className="table__cell">{parent.Gender}</div>
+        <div className="table__cell">{parent.Ability}</div>
+        <div className="table__cell">{parent.MinimalDistance}</div>
+        <div className="table__cell">{parent.Weight}</div>
+        <div className="table__cell">{parent.Born}</div>
+        <div className="table__cell">{parent.InSpaceSince}</div>
+        <div className="table__cell">{parent.BeerConsumption}</div>
+        <div className="table__cell">{parent.KnowsTheAnswer}</div>
         <div className="table__cell">
           <button className="table__remove-btn">❌</button>
         </div>
