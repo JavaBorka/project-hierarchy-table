@@ -4,7 +4,7 @@ import { ParentDataProps } from '../../types/parentTableTypes';
 import React from 'react';
 
 export const ParentData: React.FC<ParentDataProps> = ({ parentItem }) => {
-  const [isParentOpen, setIsParentOpen] = useState(false);
+  const [isParentOpen, setIsParentOpen] = useState<boolean>(false);
 
   return (
     <>
@@ -35,9 +35,11 @@ export const ParentData: React.FC<ParentDataProps> = ({ parentItem }) => {
       <div
         className={`table__first-child-wrapper ${isParentOpen ? 'table__first-child-wrapper--open' : ''}`}
       >
-        {isParentOpen && parentItem.firstChildRecords.length > 0 && (
-          <FirstChildTable firstChildRecords={parentItem.firstChildRecords} />
-        )}
+        {isParentOpen &&
+          parentItem.firstChildRecords &&
+          parentItem.firstChildRecords?.length > 0 && (
+            <FirstChildTable firstChildRecords={parentItem.firstChildRecords} />
+          )}
       </div>
     </>
   );

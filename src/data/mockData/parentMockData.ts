@@ -18,7 +18,7 @@ export const parentMockData: ParentItem[] = [
         CharacterID: '44',
         IsAlive: 'true',
         Years: '29',
-        SecondChildRecords: [
+        secondChildRecords: [
           {
             ID: '2008',
             NemesisID: '1007',
@@ -36,7 +36,7 @@ export const parentMockData: ParentItem[] = [
         CharacterID: '44',
         IsAlive: 'true',
         Years: '28',
-        SecondChildRecords: [],
+        secondChildRecords: [],
       },
     ],
   },
