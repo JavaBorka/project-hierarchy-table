@@ -5,7 +5,7 @@ export interface FirstChildItem {
   CharacterID: string;
   IsAlive: string;
   Years: string;
-  SecondChildRecords: SecondChildItem[];
+  secondChildRecords: SecondChildItem[];
 }
 
 export interface FirstChildTableProps {
