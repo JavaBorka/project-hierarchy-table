@@ -16,4 +16,5 @@ export interface ParentItem {
 
 export interface ParentDataProps {
   parentItem: ParentItem;
+  onRemove: (_id: string) => void;
 }

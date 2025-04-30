@@ -15,11 +15,22 @@ export const ParentTable: React.FC = () => {
     fetchParentData().then(setParentData);
   }, []);
 
+  const handleRemove = (idToDelete: string) => {
+    const updatedParentData = parentData.filter(
+      parentItem => parentItem.ID !== idToDelete
+    );
+    setParentData(updatedParentData);
+  };
+
   return (
     <div className="table__parent">
       <ParentHeader />
       {parentData.map(parentItem => (
-        <ParentData key={parentItem.ID} parentItem={parentItem} />
+        <ParentData
+          key={parentItem.ID}
+          parentItem={parentItem}
+          onRemove={handleRemove}
+        />
       ))}
     </div>
   );

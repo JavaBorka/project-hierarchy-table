@@ -23,6 +23,16 @@ export default tseslint.config(
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+        },
+      ],
+
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
@@ -35,6 +45,7 @@ export default tseslint.config(
       prettierConfig,
     ],
   },
+
   {
     files: ['**/*.{js,jsx}'],
     languageOptions: {
@@ -49,6 +60,7 @@ export default tseslint.config(
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

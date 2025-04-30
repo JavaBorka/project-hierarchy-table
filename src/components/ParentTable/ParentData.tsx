@@ -3,7 +3,10 @@ import { FirstChildTable } from '../FirstChildTable/FirstChildTable';
 import { ParentDataProps } from '../../types/parentTableTypes';
 import React from 'react';
 
-export const ParentData: React.FC<ParentDataProps> = ({ parentItem }) => {
+export const ParentData: React.FC<ParentDataProps> = ({
+  parentItem,
+  onRemove,
+}) => {
   const [isParentOpen, setIsParentOpen] = useState<boolean>(false);
 
   return (
@@ -30,7 +33,14 @@ export const ParentData: React.FC<ParentDataProps> = ({ parentItem }) => {
         <div className="table__cell">{parentItem.BeerConsumption}</div>
         <div className="table__cell">{parentItem.KnowsTheAnswer}</div>
         <div className="table__cell">
-          <button className="table__remove-btn">❌</button>
+          <button
+            className="table__remove-btn"
+            onClick={() => {
+              onRemove(parentItem.ID);
+            }}
+          >
+            ❌
+          </button>
         </div>
       </div>
 
