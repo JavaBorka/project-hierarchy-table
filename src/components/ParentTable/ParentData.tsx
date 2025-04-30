@@ -17,9 +17,11 @@ export const ParentData: React.FC<ParentDataProps> = ({
             className="table__toggle-btn"
             onClick={() => setIsParentOpen(prev => !prev)}
           >
-            {isParentOpen
-              ? '▼'
-              : parentItem.firstChildRecords?.length > 0 && '▶'}
+            {parentItem.firstChildRecords?.length > 0
+              ? isParentOpen
+                ? '▼'
+                : '▶'
+              : null}
           </button>
         </div>
         <div className="table__cell">{parentItem.ID}</div>
