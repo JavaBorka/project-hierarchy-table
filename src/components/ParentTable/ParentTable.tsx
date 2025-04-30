@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { fetchParentData } from '../../services/fetchParentData';
 import { ParentItem } from '../../types/parentTableTypes';
+import { filterOutById } from '../../utils/filterOutById';
 
 export const ParentTable: React.FC = () => {
   const [parentData, setParentData] = useState<ParentItem[]>([]);
@@ -16,23 +17,8 @@ export const ParentTable: React.FC = () => {
   }, []);
 
   const handleRemove = (idToDelete: string) => {
-    const filteredParents = parentData.filter(
-      parent => parent.ID !== idToDelete
-    );
-
-    const updated = filteredParents.map(parent => ({
-      ...parent,
-      firstChildRecords: parent.firstChildRecords
-        .filter(firstChild => firstChild.ID !== idToDelete)
-        .map(firstChild => ({
-          ...firstChild,
-          secondChildRecords: firstChild.secondChildRecords.filter(
-            secondChild => secondChild.ID !== idToDelete
-          ),
-        })),
-    }));
-
-    setParentData(updated);
+    const filteredData = filterOutById(idToDelete, parentData);
+    setParentData(filteredData);
   };
 
   return (

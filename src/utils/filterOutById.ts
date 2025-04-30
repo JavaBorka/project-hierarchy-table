@@ -1,6 +1,22 @@
-export const filterOutById = <T extends { ID: string }>(
+import { ParentItem } from '../types/parentTableTypes';
+
+export const filterOutById = (
   idToDelete: string,
-  items: T[]
-): T[] => {
-  return items.filter(item => item.ID !== idToDelete);
+  parentData: ParentItem[]
+): ParentItem[] => {
+  const filteredParents = parentData.filter(parent => parent.ID !== idToDelete);
+
+  const updated = filteredParents.map(parent => ({
+    ...parent,
+    firstChildRecords: parent.firstChildRecords
+      .filter(firstChild => firstChild.ID !== idToDelete)
+      .map(firstChild => ({
+        ...firstChild,
+        secondChildRecords: firstChild.secondChildRecords.filter(
+          secondChild => secondChild.ID !== idToDelete
+        ),
+      })),
+  }));
+
+  return updated;
 };
