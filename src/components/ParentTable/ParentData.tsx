@@ -48,7 +48,10 @@ export const ParentData: React.FC<ParentDataProps> = ({
         className={`table__first-child-wrapper ${isParentOpen ? 'table__first-child-wrapper--open' : ''}`}
       >
         {isParentOpen && parentItem.firstChildRecords?.length > 0 && (
-          <FirstChildTable firstChildRecords={parentItem.firstChildRecords} />
+          <FirstChildTable
+            firstChildRecords={parentItem.firstChildRecords}
+            onRemove={onRemove}
+          />
         )}
       </div>
     </>

@@ -5,6 +5,7 @@ import React from 'react';
 
 export const FirstChildData: React.FC<FirstChildDataProps> = ({
   firstChildItem,
+  onRemove,
 }) => {
   const [isFirstChildOpen, setIsFirstChildOpen] = useState<boolean>(false);
 
@@ -27,7 +28,14 @@ export const FirstChildData: React.FC<FirstChildDataProps> = ({
         <div className="table__cell">{firstChildItem.Years}</div>
 
         <div className="table__cell">
-          <button className="table__remove-btn">❌</button>
+          <button
+            className="table__remove-btn"
+            onClick={() => {
+              onRemove(firstChildItem.ID);
+            }}
+          >
+            ❌
+          </button>
         </div>
       </div>
       <div
@@ -36,6 +44,7 @@ export const FirstChildData: React.FC<FirstChildDataProps> = ({
         {isFirstChildOpen && firstChildItem.secondChildRecords?.length > 0 && (
           <SecondChildTable
             secondChildRecords={firstChildItem.secondChildRecords}
+            onRemove={onRemove}
           />
         )}
       </div>

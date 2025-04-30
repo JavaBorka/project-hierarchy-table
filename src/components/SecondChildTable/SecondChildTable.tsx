@@ -7,6 +7,7 @@ import { SecondChildTableProps } from '../../types/secondChildTableTypes';
 
 export const SecondChildTable: React.FC<SecondChildTableProps> = ({
   secondChildRecords,
+  onRemove,
 }) => {
   return (
     <div className="table__second-child">
@@ -15,6 +16,7 @@ export const SecondChildTable: React.FC<SecondChildTableProps> = ({
         <SecondChildData
           key={secondChildItem.ID}
           secondChildItem={secondChildItem}
+          onRemove={onRemove}
         />
       ))}
     </div>

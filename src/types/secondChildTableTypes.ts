@@ -6,8 +6,10 @@ export interface SecondChildItem {
 
 export interface SecondChildTableProps {
   secondChildRecords: SecondChildItem[];
+  onRemove: (id: string) => void;
 }
 
 export interface SecondChildDataProps {
   secondChildItem: SecondChildItem;
+  onRemove: (id: string) => void;
 }

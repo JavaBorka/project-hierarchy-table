@@ -10,8 +10,10 @@ export interface FirstChildItem {
 
 export interface FirstChildTableProps {
   firstChildRecords: FirstChildItem[];
+  onRemove: (id: string) => void;
 }
 
 export interface FirstChildDataProps {
   firstChildItem: FirstChildItem;
+  onRemove: (id: string) => void;
 }

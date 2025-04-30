@@ -7,7 +7,9 @@ import React from 'react';
 
 export const FirstChildTable: React.FC<FirstChildTableProps> = ({
   firstChildRecords,
+  onRemove,
 }) => {
+  console.log(onRemove);
   return (
     <div className="table__first-child">
       <FirstChildHeader />
@@ -15,6 +17,7 @@ export const FirstChildTable: React.FC<FirstChildTableProps> = ({
         <FirstChildData
           key={firstChildItem.ID}
           firstChildItem={firstChildItem}
+          onRemove={onRemove}
         />
       ))}
     </div>

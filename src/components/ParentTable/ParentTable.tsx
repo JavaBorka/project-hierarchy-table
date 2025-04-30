@@ -16,10 +16,23 @@ export const ParentTable: React.FC = () => {
   }, []);
 
   const handleRemove = (idToDelete: string) => {
-    const updatedParentData = parentData.filter(
-      parentItem => parentItem.ID !== idToDelete
+    const filteredParents = parentData.filter(
+      parent => parent.ID !== idToDelete
     );
-    setParentData(updatedParentData);
+
+    const updated = filteredParents.map(parent => ({
+      ...parent,
+      firstChildRecords: parent.firstChildRecords
+        .filter(firstChild => firstChild.ID !== idToDelete)
+        .map(firstChild => ({
+          ...firstChild,
+          secondChildRecords: firstChild.secondChildRecords.filter(
+            secondChild => secondChild.ID !== idToDelete
+          ),
+        })),
+    }));
+
+    setParentData(updated);
   };
 
   return (
