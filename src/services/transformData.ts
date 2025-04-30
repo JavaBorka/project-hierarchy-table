@@ -4,9 +4,10 @@ import {
   RawFirstChild,
   RawSecondChild,
 } from '../types/rawDataTypes';
+import { removeDuplicatesById } from '../utils/removeDuplicates';
 
 export const transformData = (parentData: RawParent[]): ParentItem[] => {
-  return parentData.map(parent => ({
+  const transformed = parentData.map(parent => ({
     ID: parent.data.ID as string,
     Name: parent.data.Name as string,
     Gender: parent.data.Gender as string,
@@ -35,4 +36,6 @@ export const transformData = (parentData: RawParent[]): ParentItem[] => {
         })
       ) ?? [],
   }));
+
+  return removeDuplicatesById(transformed);
 };
